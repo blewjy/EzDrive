@@ -27,17 +27,26 @@ This project was built entirely in Swift 4.0. The UI was built 100% programmatic
 
 Our app features a simple sign-in and sign-out functionality using Firebase Authentification. Users would have to register using an email and password, and will also login with an email and password. We also chose to take down more information regarding the user such as his name, location, a preferred username and also a profile picture. User is automatically logged in once registration is complete. 
 
+<img src="/docs/ezdrive_login.jpg" alt="login" width="200"/>
+
 ### Sorting and Filtering of posts
 
 Upon logging in, users are immediately presented with the Browse tab of the application, which displays all the cars that other users have already shared in the app. Users can sort posts via their location, which we have currently limited to just North, South, East, West and Central Singapore for simplicity. Sorting by price and date of post is also possible, as is filtering by car model. We have also limited the car models for simplicity. This can easily be expanded to include all car models in future development.
+
+<img src="/docs/ezdrive_browse.jpg" alt="browse" width="200"/>
 
 ### New post
 
 Users can create a new post when they wish to put their car available for sharing through the Share tab. The share tab requires the user to input some basic details regarding their car, including photos, brand and model, location, price, etc. Users are also required to input their car plate number, which is kept private, but used as a primary defense against bogus posts. Invalid car plate numbers will be rejected and the user will not be allowed to proceed with the post. The car plate number is checked against actual Singapore vehicle registration plate checksum. More info on the [wiki page](https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Singapore).
 
+<img src="/docs/ezdrive_share.jpg" alt="share" width="200"/>
+
 ### Searching of posts
 
 Users can navigate to the search tab and input a custom search query for their desired car. The search feature works in such a way that as users are inputting their search query, the posts are automatically filtered when whatever term they are searching for appears in the post's title. The following code segment shows how this is done:
+
+<img src="/docs/ezdrive_search1.png" alt="search1" width="200"/>   <img src="/docs/ezdrive_search2.png" alt="search2" width="200"/>
+
 
 ##### Implementation
 
@@ -65,6 +74,8 @@ there is an option for the user to initiate a chat. In the chat view, users can 
 
 This was admittedly one of the harder features to implement due to the lack of suitable and up-to-date third party libraries that could provide us with a customisable message controller. We had to do this completely from scratch and encountered a lot of problems with storing the messages in the database, fetching the correct messages for the correct users and post, and rendering out the message in a clean and aesthetic manner.
 
+<img src="/docs/ezdrive_chat.png" alt="chat" width="200"/>
+
 ##### Implementation
 
 In the end, on the database side of things, we decided to structure our data in the following manner (Firebase is a NoSQL database):
@@ -91,3 +102,5 @@ There was an interesting problem that we had to get around when using this idea 
 ### User Profile page and review
 
 The profile page of the user simply presents the posts belonging to the current user as well as his reviews and other information. The current user is also able to browse the profile pages of other users by navigating through the posts on the main browse page, and can subsequently leave reviews on their pages.
+
+<img src="/docs/ezdrive_profile.jpg" alt="profile" width="200"/>
